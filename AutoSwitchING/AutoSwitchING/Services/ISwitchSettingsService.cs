@@ -11,7 +11,7 @@ namespace AutoSwitchING.Services
         void AddSwitchSetting(string api, int index, bool isEnabled = true);
         void SaveSwitchSettings();
         void UpdateSubscription();
-        object ToolPaneView { get; }
+        Lazy<object> ToolPaneView { get; }
         SwitchSettings Settings { get; }
     }
 }

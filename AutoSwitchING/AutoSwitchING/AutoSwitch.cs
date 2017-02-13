@@ -20,24 +20,17 @@ namespace AutoSwitchING
 {
     [PluginExport("AutoSwitchING", "iyomumx@NGA", "1.0.1", "5dff2c3d-6436-43d3-a590-8ddb278ee8c5")]
     [Export(typeof(IToolPane))]
-    [Export(typeof(IToolPaneScrollBarVisibilities))]
-    public class AutoSwitch : IPlugin, IToolPaneScrollBarVisibilities, IToolPane, ISwitchSettingsService
+    public class AutoSwitch : IPlugin, IToolPane, ISwitchSettingsService
     {
-        #region IToolPaneScrollBarVisibilities Implements
-
-        ScrollBarVisibility IToolPaneScrollBarVisibilities.HorizontalScrollBarVisibility => ScrollBarVisibility.Disabled;
-        ScrollBarVisibility IToolPaneScrollBarVisibilities.VerticalScrollBarVisibility => ScrollBarVisibility.Hidden;
-
-        #endregion
 
         #region IToolPane Implements
 
         string IToolPane.Name => "自动切换";
-        object IToolPane.View => ServiceManager.GetService<ISwitchSettingsService>().ToolPaneView;
+        Lazy<object> IToolPane.View => ServiceManager.GetService<ISwitchSettingsService>().ToolPaneView;
 
         #endregion
 
-        Lazy<PreferencePaneView> tabview = new Lazy<PreferencePaneView>(() =>
+        Lazy<object> tabview = new Lazy<object>(() =>
         {
             var view = new PreferencePaneView();
             view.SettingsList.SetBinding(FrameworkElement.DataContextProperty, new Binding("Settings") { Source = ServiceManager.GetService<ISwitchSettingsService>() });
@@ -101,7 +94,7 @@ namespace AutoSwitchING
             DoUpdateSubscription();
         }
 
-        object ISwitchSettingsService.ToolPaneView => tabview.Value;
+        Lazy<object> ISwitchSettingsService.ToolPaneView => tabview;
 
         private void DoUpdateSubscription()
         {

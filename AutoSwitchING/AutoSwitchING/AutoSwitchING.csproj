@@ -30,12 +30,30 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="HeavenlyWind">
+      <HintPath>..\..\IntelligentNavalGun_Binary\HeavenlyWind.exe</HintPath>
+    </Reference>
+    <Reference Include="HeavenlyWind.Base">
+      <HintPath>..\..\IntelligentNavalGun_Binary\HeavenlyWind.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="HeavenlyWind.Extensibility">
+      <HintPath>..\..\IntelligentNavalGun_Binary\HeavenlyWind.Extensibility.dll</HintPath>
+    </Reference>
+    <Reference Include="HeavenlyWind.Game">
+      <HintPath>..\..\IntelligentNavalGun_Binary\HeavenlyWind.Game.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="Sakuno.Base">
+      <HintPath>..\..\IntelligentNavalGun_Binary\Sakuno.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Sakuno.UserInterface">
+      <HintPath>..\..\IntelligentNavalGun_Binary\Sakuno.UserInterface.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
@@ -61,38 +79,6 @@
     <Compile Include="SwitchSetting.cs" />
     <Compile Include="SwitchSettings.cs" />
     <Compile Include="SwitchType.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\IntelligentNavalGun\HeavenlyWind.Base\HeavenlyWind.Base.csproj">
-      <Project>{eeb0bea3-8d40-47c3-aeef-ba7774d721ca}</Project>
-      <Name>HeavenlyWind.Base</Name>
-      <Private>False</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\..\IntelligentNavalGun\HeavenlyWind.Extensibility\HeavenlyWind.Extensibility.csproj">
-      <Project>{2541487f-d8db-4ca5-9b41-df6243b259b7}</Project>
-      <Name>HeavenlyWind.Extensibility</Name>
-      <Private>False</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\..\IntelligentNavalGun\HeavenlyWind.Game\HeavenlyWind.Game.csproj">
-      <Project>{9263590f-63a1-4586-b478-a12d7d67b622}</Project>
-      <Name>HeavenlyWind.Game</Name>
-      <Private>False</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\..\IntelligentNavalGun\HeavenlyWind\HeavenlyWind.csproj">
-      <Project>{9653c822-a04c-4521-baf0-8207ac4b729a}</Project>
-      <Name>HeavenlyWind</Name>
-      <Private>False</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\..\IntelligentNavalGun\Library\Sakuno.Base\Sakuno.Base.csproj">
-      <Project>{85fe16eb-f999-445c-872e-b8181c67031c}</Project>
-      <Name>Sakuno.Base</Name>
-      <Private>False</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\..\IntelligentNavalGun\Library\Sakuno.UserInterface\Sakuno.UserInterface.csproj">
-      <Project>{DBA4B269-E3EC-43BE-83E6-EE9DEDFA21F8}</Project>
-      <Name>Sakuno.UserInterface</Name>
-      <Private>False</Private>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Page Include="PreferencePaneView.xaml">
